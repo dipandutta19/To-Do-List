@@ -1,0 +1,153 @@
+::-webkit-scrollbar {
+    width: 0.5vh;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.eventBox {
+    height: fit-content;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: .7vw;
+    border-color: black;
+    border-width: 0.3vh;
+    border-style: solid;
+    margin-top: 1.5vh;
+    padding: 3vh;
+}
+
+#title {
+    /* background-color: aqua; */
+}
+
+#details {
+    /* background-color: blueviolet; */
+    margin-top: 10vh;
+}
+
+#downArrow {
+    margin-top: 3vh;
+}
+
+#icons {
+    margin-top: -7vh;
+    margin-left: 98%;
+}
+
+.gg-chevron-double-up,
+.gg-chevron-double-down {
+    cursor: pointer !important;
+}
+
+#edit,
+#delete {
+    float: left;
+    cursor: pointer;
+}
+
+#eventList {
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 80vh;
+    padding: 1.5vh;
+}
+
+.description {
+    user-select: none;
+    cursor: text;
+    font-size: smaller;
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+    #searchbar {
+        height: 5vh;
+        width: 100%;
+        /* background-color: aquamarine; */
+    }
+
+    #div1,
+    #div2,
+    #div3 {
+        width: 36%;
+        height: 5vh;
+        float: left;
+    }
+
+    #ft {
+        font-size: 2.5vh;
+    }
+
+    #ft2 {
+        font-size: 2vh;
+    }
+
+    #ft3 {
+        font-size: 2vh;
+    }
+
+    #ft4 {
+        font-size: 2.5vh;
+    }
+
+    #star {
+        font-size: 2vh;
+        margin-top: 1%;
+    }
+
+    #div1 {
+        padding: 1vh;
+        text-align: right;
+        padding-right: 2vw;
+        width: 26%;
+    }
+
+    #div2 {
+        width: 30%;
+    }
+
+    #div3 {
+        width: auto;
+        display: inline-flex;
+    }
+
+    #searchDate,
+    #showAll {
+        /* padding-right: 6vh; */
+        width: 50%;
+        margin-left: 1vw !important;
+        /* padding-left: 6vh; */
+    }
+}
+
+/* Tablet View */
+@media (min-width: 768px) and (max-width:1023px) {
+
+    #searchDate,
+    #showAll {
+        width: 100%;
+        margin-bottom: 1vh;
+    }
+
+    #div2 {
+        margin-top: 1vh;
+    }
+}
+
+/* Mobile View */
+@media (min-width: 0px) and (max-width:767px) {
+
+    #searchDate,
+    #showAll {
+        width: 100%;
+        margin-bottom: 1vh;
+    }
+
+    #div2 {
+        margin-top: 1vh;
+    }
+}

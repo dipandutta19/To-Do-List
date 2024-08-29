@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/chevron-double-down.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/chevron-double-up.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/pen.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/trash-empty.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>To-Do-List</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="styleRight.css"> -->
+</head>
+
+<body onload="initializeDB()">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <div id="content">
+        <!-- Div Left Start -->
+        <div id="left">
+            <form >
+                <!-- Start Date -->
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Start Date</label>
+                    <input type="date" class="form-control" id="startDate" aria-describedby="emailHelp"
+                        placeholder="No Date Selected" required>
+                </div>
+
+                <!-- Event Name -->
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Event Name</label>
+                    <input type="text" class="form-control" id="eventName" placeholder="Enter Event Name" required
+                        oninput="textCount(this,80)" maxlength="80">
+                    <small id="eventNameDetails" class="form-text text-muted">
+                        <p class="textRemaining"> 80 / 80 Characters left</p>
+                    </small>
+                </div>
+
+                <!-- Start Time -->
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Start Time</label>
+                    <input type="time" class="form-control" id="startTime" aria-describedby="emailHelp"
+                        placeholder="No Date Selected" required>
+                </div>
+
+                <!-- End Time -->
+                <div class="form-group">
+                    <label for="exampleInputEmail1">End Time</label>
+                    <input type="time" class="form-control" id="endTime" aria-describedby="emailHelp"
+                        placeholder="No Date Selected" required>
+                </div>
+
+                <!-- Decription -->
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
+                        oninput="textCount(this,300)" maxlength="300"></textarea>
+                    <small id="eventNameDetails" class="form-text text-muted">
+                        <p class="textRemaining"> 300 / 300 Characters left</p>
+                    </small>
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-2" id="addEvent" onclick="addData(this)">Add
+                    Event</button>
+            </form>
+
+        </div>
+        <!-- Div Left End -->
+
+        <!-- Div Right Start-->
+        <div id="right">
+            <div id="searchbar">
+                <!-- Your Event Lists Start -->
+                <div id="div1">
+                    <font id="ft">Event List</font>
+                </div>
+                <!-- Your Event Lists End -->
+
+
+                <!-- Date Start -->
+                <div id="div2">
+                    <div class="form-group">
+                        <input type="date" class="form-control" id="startDate" aria-describedby="emailHelp"
+                            placeholder="No Date Selected">
+                    </div>
+                </div>
+                <!-- Date End -->
+
+                <div id="div3">
+                    <button type="button" class="btn btn-outline-secondary" id="searchDate"
+                        onclick="dateFilter(this)">Search</button>
+                    <button type="button" class="btn btn-outline-secondary" id="showAll" onclick="loadData()">All
+                        Events</button>
+                </div>
+            </div>
+            <hr>
+            <!-- Start of Event List -->
+            <div id="eventList">
+                <!-- Start of Event -->
+
+                <!-- End of Event -->
+
+                <!-- Start of Another Event -->
+
+                <!-- End of Another Event -->
+
+
+            </div>
+            <!-- End of Event List -->
+        </div>
+        <!-- Div Right End -->
+    </div>
+    <footer> © All Copyrights Reserved | To-do-list </footer>
+</body>
+
+</html>
